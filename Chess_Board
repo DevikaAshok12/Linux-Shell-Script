@@ -1,0 +1,23 @@
+#!/bin/bash
+<<doc
+Name:Devika Ashok
+Date:
+Description:Script to print chess board
+Sample Input:
+Sample Output:
+doc
+for row in `seq 8`          #loop for each row
+do
+    for col in `seq 8`       #loop for each column
+    do
+        sum=$((row+col))
+    if [ $((sum%2)) -eq 0 ]    #check if sum of row and col is even
+    then
+        echo -e -n "\e[47m"" "  #for white box
+    else
+        echo -e -n "\e[40m"" "  #for black box
+    fi
+    done
+        echo -e -n "\e[0m"" "  #to make it normal
+    echo
+done
