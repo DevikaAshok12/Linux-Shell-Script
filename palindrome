@@ -1,0 +1,21 @@
+#!/bin/bash
+<<doc
+Name:Devika Ashok
+Date:
+Description:
+Sample Input:
+Sample Output:
+doc
+string=$1   #input is given through command line argument
+new=""
+for i in `seq 0 $((${#string}-1))`
+do
+    new="$new${string: $((-1-i)):1}"
+done
+echo "$new"
+if [ "$1" == "$new" ]
+then
+    echo "it is a palindrome"
+else
+    echo "it is not a palindrome"
+fi
